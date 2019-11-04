@@ -4,7 +4,7 @@
 * It allows the user to connect to their `ioBroker` and send and receive data 
 * It is developed using `Angular >=6.0.0` and its newly introduced `ng g library` schematics.
 * This library is part of MatIoBroker project and it is generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.12.
-* Library location: `projects/ngx-mat-typeahead` directory of this repository.
+* Library location: `projects/ngx-mat-io-broker-connector-service` directory of this repository.
 
 ## Examples/Demo
 
@@ -207,9 +207,9 @@ this.allDataSubscription = this.ioBrokerConn.allData$
 * Change "YourIP" and "Port" to yours. (This is needed in the index.html and in the app.component.ts files)
 * Run `ng serve` for a dev server and running the demo app. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Build the NgxMatTypeahead module
+## Build the NgxMatIoBrokerConnectorService module
 
-Run `ng build NgxMatTypeahead` to build the library. The build artifacts will be stored in the `dist/ngx-mat-typeahead` directory. Use the `--prod` flag for a production build.
+Run `ng build NgxMatNgxMatIoBrokerConnectorService` to build the library. The build artifacts will be stored in the `dist/ngx-mat-io-broker-connector-service` directory. Use the `--prod` flag for a production build.
 
 ## Credits
 
