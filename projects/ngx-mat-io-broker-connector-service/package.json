@@ -1,6 +1,6 @@
 {
   "name": "ngx-mat-io-broker-connector-service",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description" :
   "A simple way to connect to the socket adapter, provided by the ioBroker, in angular. It allows to send and receive data.",
   "author": "Luca Pohl",
