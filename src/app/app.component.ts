@@ -19,7 +19,7 @@ export class AppComponent {
   constructor(public ioBrokerConn: NgxMatIoBrokerConnectorService) {
     // First a connection to the socket adapter has to be created
     // For that call the connect function in the ioBrokerConnService and pass on the IP and the Port
-    this.ioBrokerConn.connect('10.48.2.176', 8080).then(() => {
+    this.ioBrokerConn.connect('YourIP', 8080).then(() => {
       // Examples
       this.ioBrokerConn.registerGetter('deconz.0.Sensors.2', 'buttonevent');
       let variable = this.ioBrokerConn.getter('deconz.0.Sensors.2', 'buttonevent', 'val');

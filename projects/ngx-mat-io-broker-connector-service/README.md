@@ -10,6 +10,11 @@
 
 * A simple Example can be found under `src/app` directory of this repository.
 
+## Requirements
+
+The Socket Adapter of the ioBroker has to be installed and running.
+You can find it under the name "socketio.0". For further information, visit the [GitHub page](https://github.com/ioBroker/ioBroker.socketio) of the Adapter.
+
 ## Installation
 
 `npm i ngx-mat-io-broker-connector-service`
@@ -117,11 +122,89 @@ this.allDataSubscription = this.ioBrokerConn.allData$
 
 ## Usage
 
-To be added.
+1. Import the socket.io.js file from your Socket Adapter in the index.html file of your angular project. It is important to change "YourIP" to the IP of of the device where the ioBroker is running and "Port" to the port on which the the socket adapter is operating
 
-## Running the example in local env
+    > `<script type="text/javascript" src="http://YourIP:Port/socket.io/socket.io.js"></script>`
+
+    ```
+   <!doctype html>
+   <html lang="en">
+   <head>
+     <meta charset="utf-8">
+     <title>Project</title>
+     <base href="/">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" type="image/x-icon" href="favicon.ico">
+     <!-- It is important to change "YourIP" to the IP of of the device where the ioBroker is running
+                                      and "Port" to the port on which the the socket adapter is operating -->
+     <script type="text/javascript" src="http://YourIP:Port/socket.io/socket.io.js"></script>
+   </head>
+   <body>
+     <mat-ta-root></mat-ta-root>
+   </body>
+   </html>
+    ```         
+
+2. Import the NgxMatIoBrokerConnectorService from the package and inject it into the constructor, in the component where you want to use the ioBrokerConnector.
+
+    > `import {NgxMatIoBrokerConnectorService} from 'ngx-mat-io-broker-connector-service';`
+
+    ```
+    constructor(public ioBrokerConn: NgxMatIoBrokerConnectorService) {
+        ...
+    }
+    ```
+
+3. Connect to the Socket Adapter by using the connect function and pass on your IP and Port, as stated above.
+
+    ``` 
+    constructor(public ioBrokerConn: NgxMatIoBrokerConnectorService) {
+         this.ioBrokerConn.connect('YourIP', Port).then(() => {
+             // Examples
+             }).catch((err) => {
+             // If connection fails
+             console.log(err);
+           });
+         }
+    ```    
+
+4. Call any of the provided functions in the success case of the connect function to receive and send data.
+
+    ```
+     let variable = this.ioBrokerConn.getter('deconz.0.Sensors.2', 'buttonevent', 'val');
+     let variable2 = this.ioBrokerConn.getter('deconz.0.Sensors.2', 'buttonevent', '');
+     let states = this.ioBrokerConn.getAllStates();
+     this.ioBrokerConn.setter('deconz.0.Sensors.2', 'buttonevent', 1337);
+    ```
+
+5. Register to the getterData and/or allData BehaviourSubject to receive data. Create a Subscription variable for that and subscribe on the subjects in the ngOnInit function of your component.
+
+    > `getterSubscription: Subscription;`
+    >
+    > `allDataSubscription: Subscription;`
+
+    ``` 
+    ngOnInit(): void {
+        // Subscribe to getterData
+        this.getterSubscription = this.ioBrokerConn.getterData$
+          .subscribe(data => {
+            // data contains an object ({id: 'id', state: 'state'}) which can be handled here
+          });
+    
+        // Subscribe to allData
+        this.allDataSubscription = this.ioBrokerConn.allData$
+          .subscribe(data => {
+            // data contains an object ({id: 'id', state: 'state'}) which can be handled here
+          });
+      }
+    ```
+
+**Note:** For further documentation, check out the example provided in the src directory.
+
+## Running the example in local environment
 
 * `npm i`
+* Change "YourIP" and "Port" to yours. (This is needed in the index.html and in the app.component.ts files)
 * Run `ng serve` for a dev server and running the demo app. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build the NgxMatTypeahead module
