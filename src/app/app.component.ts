@@ -8,7 +8,7 @@ import {NgxMatIoBrokerConnectorService} from 'ngx-mat-io-broker-connector-servic
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'project';
+  title = 'IoBrokerConnector';
 
 // Represents the subscription to the behaviourSubject in the ioBrokerConnService for the data of all registered getters
   getterSubscription: Subscription;
