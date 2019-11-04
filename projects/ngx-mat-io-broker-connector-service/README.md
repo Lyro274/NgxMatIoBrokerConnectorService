@@ -1,4 +1,4 @@
-# NgxMatIoBrokerConnector
+# NgxMatIoBrokerConnectorService
 
 * A simple `Angular Service` that can be used in your project
 * It allows the user to connect to their `ioBroker` and send and receive data 
@@ -12,7 +12,7 @@
 
 ## Installation
 
-`npm i ngx-mat-io-broker-connector`
+`npm i ngx-mat-io-broker-connector-service`
 
 ## Functions
 
