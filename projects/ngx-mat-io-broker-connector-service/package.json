@@ -1,6 +1,22 @@
 {
   "name": "ngx-mat-io-broker-connector-service",
-  "version": "0.0.1",
+  "version": "1.0.1",
+  "description" :
+  "A simple way to connect to the socket adapter, provided by the ioBroker, in angular. It allows to send and receive data.",
+  "author": "Luca Pohl",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lyro274/NgxMatIoBrokerConnectorService"
+  },
+  "homepage": "https://github.com/Lyro274/NgxMatIoBrokerConnectorService",
+  "keywords": [
+    "angular",
+    "javascript",
+    "typescript",
+    "ioBroker",
+    "socketio",
+    "ioBroker.socketio"
+  ],
   "peerDependencies": {
     "@angular/common": "^8.2.13",
     "@angular/core": "^8.2.13"
