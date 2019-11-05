@@ -31,7 +31,7 @@ The connect function let's the user connect to the socket adapter of their ioBro
 It is important to use with a promise here, and only call further functions once the promise is resolved. If it is rejected, then the connecting process failed.
 
 ```
-this.ioBrokerConn.connect('10.48.2.176', 8080).then(() => {
+this.ioBrokerConn.connect('10.43.7.126', 8080).then(() => {
       // Call further functions here
     }).catch((err) => {
       // Connection failed
