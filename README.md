@@ -1,3 +1,7 @@
+#**Note**
+
+This repository is outdated and is not being continued. The NgxMatIoBrokerConnectorService npm library was moved to a [different repository](https://github.com/thm-mni-ii/NgxMatIoBrokerConnectorService).
+
 # NgxMatIoBrokerConnectorService
 
 * A simple `Angular Service` that can be used in your project
